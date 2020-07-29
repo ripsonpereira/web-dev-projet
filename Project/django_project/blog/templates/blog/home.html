@@ -5,14 +5,16 @@
           <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="#">{{ post.author }}</a>
+             <h3><a class="mr-2" href="#">{{ post.author }}</a></h3>
               <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
             </div>
-            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+            <h3><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
             <p class="article-content">{{ post.content }}</p>
 
              
-               <img class="box" src="{% if post.image %}{{ post.image.url }}{% else %}#{% endif %}"/>
+               <img class="box" src="{% if post.image %}{{ post.image.url }}{% else %}{% endif %}"/>
+
+                <a href="{% if post.URL %}{{ post.URL }}{ % else %}{% endif %}">{{post.URL}}</a>
              
           </div>
         </article>

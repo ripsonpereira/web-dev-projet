@@ -13,10 +13,11 @@
           </div>
         {% endif %}
       </div>
-      <h2 class="article-title">{{ object.title }}</h2>
+      <h3 class="article-title">{{ object.title }}</h3>
       <p class="article-content">{{ object.content }}</p>
      <div class="box">
-      <img  src="{% if post.image %}{{ post.image.url }}{% else %}#{% endif %}"/>
+      <img  src="{% if post.image %}{{ post.image.url }}{% else %}{% endif %}"/>
+      <a href="{% if post.url %}{{ post.url }}{ % else %}{% endif %}">{{post.URL}}</a>
     </div>
     </div>
   </article>
